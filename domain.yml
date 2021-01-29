@@ -4,9 +4,16 @@ session_config:
   carry_over_slots_to_new_session: true
 
 intents:
-- greet
-- inform
-- subscribe
+- order_specialty
+- give_topping
+- give_crust
+- give_size
+- give_sides
+- give_drinks
+- give_order_type
+- give_name
+- give_phone
+- answer_yn
 
 entities:
   - pizza_type

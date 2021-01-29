@@ -1,21 +1,70 @@
 nlu:
-- intent: greet
+- intent: order_specialty
   examples: |
-    - Hi
-    - Hey!
-    - Hallo
-    - Good day
-    - Good morning
+    - Hawaiian
+    - Meat Lovers
+    - 4 Cheese
+    - Pepperoni
+    - Veggie Supreme
+    - Vegan
+    
+- intent: give_topping
+    - Mozzarella
+    - Cheddar
+    - Swiss
+    - Provolone
+    - Pineapple
+    - Green peppers
+    - Red onions
+    - Mushrooms
+    - Black Olives
+    - Pepperoni
+    - Ham
+    - Bacon
+    - Sausage
 
-- intent: subscribe
+- intent: give_crust
+    - Thin
+    - Regular
+    - Deep Dish 
+    - Gluten Free
+    
+- intent: give_size
   examples: |
-    - I want to get the newsletter
-    - Can you send me the newsletter?
-    - Can you sign me up for the newsletter?
+    - Small
+    - Medium
+    - Large
+    
+ - intent: give_sides
+    - Bread sticks
+    - Cheese sticks
+    - Green salad
+    - Caesar salad
+ 
+ - intent: give_drinks
+    - Cola
+    - Root beer
+    - Orange soda
+    - Lemon soda
+    - Mineral water
+    - Ginger ale
+    
+    
+ - intent: give_order_type
+    - Delivery
+    - Pick-up
+    
+- intent: give_name
+  examples: |
+    - Alex
+    - Alexa
+    
+- intent: give_phone
+    - 206-555-5555
+    - 206-555-1234
+    - 206-555-6789
 
-- intent: inform
-  examples: |
-    - My email is example@example.com
-    - random@example.com
-    - Please send it to anything@example.com
-    - Email is something@example.com
+- intent: answer_yn
+    - Yes
+    - No
+
