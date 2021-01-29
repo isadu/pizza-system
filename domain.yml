@@ -11,7 +11,8 @@ intents:
 - give_drinks
 - give_order_type
 - give_name
-_ give_phone
+- give_phone
+- answer_yn
 slots:
   email:
     type: unfeaturized
