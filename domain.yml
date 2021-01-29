@@ -3,9 +3,15 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
-- inform
-- subscribe
+- order_specialty
+- give_topping
+- give_crust
+- give_size
+- give_sides
+- give_drinks
+- give_order_type
+- give_name
+_ give_phone
 slots:
   email:
     type: unfeaturized

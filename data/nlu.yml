@@ -59,7 +59,7 @@ nlu:
     - Alex
     - Alexa
     
-- intent: give phone number
+- intent: give_phone
     - 206-555-5555
     - 206-555-1234
     - 206-555-6789
