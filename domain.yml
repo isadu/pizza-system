@@ -2,6 +2,7 @@ version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
 intents:
 - order_specialty
 - give_topping
@@ -13,28 +14,59 @@ intents:
 - give_name
 - give_phone
 - answer_yn
+
+entities:
+  - pizza_type
+  - crust
+  - size
+  - order_type
+  - phone
+  - topping
+  - side
+  - drink
+
 slots:
-  email:
-    type: unfeaturized
-    influence_conversation: false
+  pizza_type:
+    type: text
+  crust:
+    type: text
+  size:
+    type: text
+  order_type:
+    type: text
+  phone:
+    type: text
+
 responses:
   utter_greet:
   - text: |
-      Hello! How can I help you?
-  - text: |
-      Hi!
-  utter_ask_email:
-  - text: |
-      What is your email address?
-  utter_subscribed:
-  - text: |
-      Check your inbox at {email} in order to finish subscribing to the newsletter!
-  - text: You're all set! Check your inbox at {email} to confirm your subscription.
+      Welcome to the pizza ordering system. What would you like?
+  utter_ask_size:
+  - text: Size? Can be large, medium or small.
+  - text: What size?
+  utter_ask_crust:
+  - What crust type? We have thin, regular, deep dish, gluten free.
+  utter_ask_delivery:
+  - text: Pick-up or delivery?
+  - text: Is this for pick-up or delivery?
+
 actions:
 - '...'
 - utter_greet
 - utter_subscribed
+
 forms:
-  newsletter_form:
-    email:
-    - type: from_text
+  pizza_form:
+    pizza_type:
+      - type: from_entity
+        entity: pizza_type
+    crust:
+      - type: from_entity
+        entity: crust
+    size:
+      - type: from_entity
+        entity: size
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
