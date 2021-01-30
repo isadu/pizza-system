@@ -51,3 +51,56 @@ stories:
   - intent: confirm
   - action: utter_state_confirmation
   - intent: exit
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_entity
+    entities:
+    - pizza_type: Vegetarian
+  - slot_was_set:
+    - pizza_type: Vegetarian
+  - action: pizza_form
+  - active_loop: pizza_form
+  - slot_was_set:
+    - pizza_type: Vegetarian
+  - slot_was_set:
+    - pizza_type: Vegetarian
+  - slot_was_set:
+    - requested_slot: crust
+  - slot_was_set:
+    - crust: regular
+  - slot_was_set:
+    - crust: regular
+  - slot_was_set:
+    - requested_slot: size
+  - slot_was_set:
+    - size: Small
+  - slot_was_set:
+    - size: Small
+  - slot_was_set:
+    - requested_slot: delivery
+  - slot_was_set:
+    - delivery: Pick-up
+  - slot_was_set:
+    - delivery: Pick-up
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Alexa
+  - slot_was_set:
+    - name: Alexa
+  - slot_was_set:
+    - requested_slot: phone
+  - slot_was_set:
+    - phone: 206-555-5555
+  - slot_was_set:
+    - phone: 206-555-5555
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_confirmation
+  - intent: confirm
+  - action: utter_state_confirmation
+  - intent: exit

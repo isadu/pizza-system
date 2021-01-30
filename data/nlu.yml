@@ -19,12 +19,19 @@ nlu:
     - [regular](crust)
     - [Delivery](delivery)
     - [206-555-1234](phone)
+    - [Vegetarian](pizza_type)
+    - [regular](crust)
+    - [Small](size), please
+    - [Pick-up](delivery) please
+    - [Alexa](name)
+    - [206-555-5555](phone)
 - intent: confirm
   examples: |
     - Yes
     - Yeah
     - Correct
     - Yes.
+    - Yeah.
 - intent: deny
   examples: |
     - No
@@ -38,6 +45,8 @@ nlu:
     - thanks!
     - goodbye
     - Thanks
+    - Alright, thanks
 - intent: greet
   examples: |
     - hello
+    - hi
