@@ -23,6 +23,9 @@ nlu:
     - [regular](crust)
     - [Small](size), please
     - [Pick-up](delivery) please
+    - For [pickup](delivery)
+    - [John](name)
+    - [Jane](name)
     - [Alexa](name)
     - [206-555-5555](phone)
 - intent: confirm
