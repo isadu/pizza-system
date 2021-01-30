@@ -12,7 +12,7 @@ intents:
 entities:
 - crust
 - name
-- order_type
+- delivery
 - phone
 - pizza_type
 - size
@@ -26,12 +26,14 @@ slots:
   size:
     type: text
     influence_conversation: true
-  order_type:
+  delivery:
     type: text
     influence_conversation: true
   phone:
     type: text
     influence_conversation: true
+  name:
+    type: text
 responses:
   utter_greet:
   - text: |
@@ -75,3 +77,12 @@ forms:
     size:
     - type: from_entity
       entity: size
+    delivery:
+    - type: from_entity
+      entity: delivery
+    name:
+    - type: from_entity
+      entity: name
+    phone:
+    - type: from_entity
+      entity: phone

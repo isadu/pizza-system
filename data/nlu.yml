@@ -1,34 +1,35 @@
 version: "2.0"
-
 nlu:
 - intent: give_entity
   examples: |
     - [Hawaiian](pizza_type)
     - [4 cheese](pizza_type)
+    - [Vegetarian](pizza_type) please
+    - [Vegan](pizza_type)
+    - A [pepperoni](pizza_type)
+    - [Meat lovers](pizza_type) pizza
     - [Thin](crust)
-    - [Regular](size)
+    - [Regular](crust)
     - [Deep dish](crust)
+    - On [gluten free](crust) crust
     - [Small](size)
     - [Medium](size)
     - [Large](size)
-    - [Vegan](pizza_type)
-    
+    - [Alex](name)
 - intent: confirm
   examples: |
     - Yes
     - Yeah
-    
+    - Correct
 - intent: deny
   examples: |
     - No
     - That's not right
     - Nope
-    
 - intent: request
-  examples: | 
+  examples: |
     - How big is the [large](size)?
-    
 - intent: exit
-  examples: | 
+  examples: |
     - thanks!
     - goodbye
