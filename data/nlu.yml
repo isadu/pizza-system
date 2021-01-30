@@ -10,22 +10,22 @@ nlu:
     - Veggie Supreme
     - Vegan
     
- - intent: confirm
-   examples: |
+- intent: confirm
+  examples: |
     - Yes
     - Yeah
     
- - intent: deny
-   examples: |
+- intent: deny
+  examples: |
     - No
     - That's not right
     - Nope
     
- - intent: request
+- intent: request
   examples: | 
     - How big is the large?
     
- - intent: exit
+- intent: exit
   examples: | 
     - thanks!
     - goodbye
