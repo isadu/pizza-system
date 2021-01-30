@@ -4,6 +4,7 @@ session_config:
   carry_over_slots_to_new_session: true
 
 intents:
+- greet
 - give_entity
 - confirm
 - deny
@@ -33,7 +34,7 @@ slots:
 responses:
   utter_greet:
   - text: |
-      Welcome to the pizza ordering system. What would you like?
+      "Welcome to the pizza ordering system. What would you like?"
   utter_ask_size:
   - text: |
       Size? Can be large, medium or small.

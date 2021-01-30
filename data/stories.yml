@@ -1,6 +1,7 @@
 stories:
  - story: order pizza 1
    steps:
+   - intent: greet
    - action: utter_greet
    - intent: give_entity
    - action: utter_ask_size
