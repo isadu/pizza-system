@@ -5,7 +5,6 @@ session_config:
 
 intents:
 - order_specialty
-- give_topping
 - give_crust
 - give_size
 - give_sides
@@ -54,6 +53,7 @@ actions:
 - '...'
 - utter_greet
 - utter_subscribed
+- action_make_order
 
 forms:
   pizza_form:
