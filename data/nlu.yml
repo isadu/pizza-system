@@ -1,5 +1,7 @@
+version: "2.0"
+
 nlu:
-- intent: order_specialty
+- intent: give_entity
   examples: |
     - Hawaiian
     - Meat Lovers
@@ -8,63 +10,22 @@ nlu:
     - Veggie Supreme
     - Vegan
     
-- intent: give_topping
-    - Mozzarella
-    - Cheddar
-    - Swiss
-    - Provolone
-    - Pineapple
-    - Green peppers
-    - Red onions
-    - Mushrooms
-    - Black Olives
-    - Pepperoni
-    - Ham
-    - Bacon
-    - Sausage
-
-- intent: give_crust
-    - Thin
-    - Regular
-    - Deep Dish 
-    - Gluten Free
-    
-- intent: give_size
+- intent: confirm
   examples: |
-    - Small
-    - Medium
-    - Large
-    
- - intent: give_sides
-    - Bread sticks
-    - Cheese sticks
-    - Green salad
-    - Caesar salad
- 
- - intent: give_drinks
-    - Cola
-    - Root beer
-    - Orange soda
-    - Lemon soda
-    - Mineral water
-    - Ginger ale
-    
-    
- - intent: give_order_type
-    - Delivery
-    - Pick-up
-    
-- intent: give_name
-  examples: |
-    - Alex
-    - Alexa
-    
-- intent: give_phone
-    - 206-555-5555
-    - 206-555-1234
-    - 206-555-6789
-
-- intent: answer_yn
     - Yes
+    - Yeah
+    
+- intent: deny
+  examples: |
     - No
-
+    - That's not right
+    - Nope
+    
+- intent: request
+  examples: | 
+    - How big is the large?
+    
+- intent: exit
+  examples: | 
+    - thanks!
+    - goodbye

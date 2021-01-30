@@ -35,21 +35,28 @@ responses:
   - text: |
       Welcome to the pizza ordering system. What would you like?
   utter_ask_size:
-  - text: Size? Can be large, medium or small.
-  - text: What size?
+  - text: |
+      Size? Can be large, medium or small.
   utter_ask_crust:
-  - What crust type? We have thin, regular, deep dish, gluten free.
+  - text: |
+      What crust type? We have thin, regular, deep dish, gluten free.
   utter_ask_delivery:
-  - text: Pick-up or delivery?
-  - text: Is this for pick-up or delivery?
+  - text: |
+      Pick-up or delivery?
+  - text: |
+      Is this for pick-up or delivery?
   utter_ask_name:
-  - text: What is your name?
+  - text: |
+      What is your name?
   utter_ask_phone:
-  - text: What is your phone number?
+  - text: |
+      What is your phone number?
   utter_ask_confirmation:
-  - text: Your order is a {size} {pizza_type} on {crust} crust. Is that okay?
+  - text: |
+      Your order is a {size} {pizza_type} on {crust} crust. Is that okay?
   utter_state_confirmation:
-  - text: Order is confirmed. You'll have your pizza in 20 minutes. 
+  - text: |
+      Order is confirmed. You'll have your pizza in 20 minutes. 
 
 actions:
 - '...'
@@ -74,8 +81,4 @@ forms:
         entity: phone
     order_type:
       - type: from_entity
-        entity: orer_type
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+        entity: order_type
