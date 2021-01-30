@@ -1,14 +1,14 @@
 rules:
  - rule: activate subscribe form
    steps:
-   - intent: subscribe
-   - action: newsletter_form
-   - active_loop: newsletter_form
+   - intent: order_specialty
+   - action: pizza_form
+   - active_loop: pizza_form
 
  - rule: submit form
    condition:
-   - active_loop: newsletter_form
+   - active_loop: pizza_form
    steps:
-   - action: newsletter_form
+   - action: pizza_form
    - active_loop: null
-   - action: utter_subscribed
+   - action: utter_ask_delivery
