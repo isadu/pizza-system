@@ -16,11 +16,15 @@ nlu:
     - [Medium](size)
     - [Large](size)
     - [Alex](name)
+    - [regular](crust)
+    - [Delivery](delivery)
+    - [206-555-1234](phone)
 - intent: confirm
   examples: |
     - Yes
     - Yeah
     - Correct
+    - Yes.
 - intent: deny
   examples: |
     - No
@@ -33,3 +37,7 @@ nlu:
   examples: |
     - thanks!
     - goodbye
+    - Thanks
+- intent: greet
+  examples: |
+    - hello

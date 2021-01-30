@@ -3,16 +3,16 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- give_entity
-- confirm
-- exit
 - greet
+- confirm
+- give_entity
+- exit
 - deny
 - request
 entities:
 - crust
-- name
 - delivery
+- name
 - phone
 - pizza_type
 - size
@@ -34,6 +34,7 @@ slots:
     influence_conversation: true
   name:
     type: text
+    influence_conversation: true
 responses:
   utter_greet:
   - text: |

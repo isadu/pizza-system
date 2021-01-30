@@ -5,27 +5,45 @@ stories:
   - action: utter_greet
   - intent: give_entity
     entities:
-    - pizza_type: hawaiian
+    - pizza_type: Hawaiian
   - slot_was_set:
-    - pizza_type: hawaiian
+    - pizza_type: Hawaiian
   - action: pizza_form
   - active_loop: pizza_form
   - slot_was_set:
-    - pizza_type: hawaiian
+    - pizza_type: Hawaiian
   - slot_was_set:
-    - pizza_type: hawaiian
+    - pizza_type: Hawaiian
   - slot_was_set:
     - requested_slot: crust
   - slot_was_set:
-    - crust: thin
+    - crust: regular
   - slot_was_set:
-    - crust: thin
+    - crust: regular
   - slot_was_set:
     - requested_slot: size
   - slot_was_set:
-    - size: small
+    - size: Large
   - slot_was_set:
-    - size: small
+    - size: Large
+  - slot_was_set:
+    - requested_slot: delivery
+  - slot_was_set:
+    - delivery: Delivery
+  - slot_was_set:
+    - delivery: Delivery
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Alex
+  - slot_was_set:
+    - name: Alex
+  - slot_was_set:
+    - requested_slot: phone
+  - slot_was_set:
+    - phone: 206-555-1234
+  - slot_was_set:
+    - phone: 206-555-1234
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
