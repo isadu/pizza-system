@@ -1,20 +1,35 @@
 stories:
- - story: order pizza 1
-   steps:
-   - intent: greet
-   - action: utter_greet
-   - intent: give_entity
-   - action: utter_ask_size
-   - intent: give_entity
-   - action: utter_ask_crust
-   - intent: give_entity
-   - action: utter_ask_delivery
-   - intent: give_entity
-   - action: utter_ask_name
-   - intent: give_entity
-   - action: utter_ask_phone
-   - intent: give_entity
-   - action: utter_ask_confirmation
-   - intent: confirm
-   - action: utter_state_confirmation
-   - active_loop: pizza_form
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_entity
+    entities:
+    - pizza_type: hawaiian
+  - slot_was_set:
+    - pizza_type: hawaiian
+  - action: pizza_form
+  - active_loop: pizza_form
+  - slot_was_set:
+    - pizza_type: hawaiian
+  - slot_was_set:
+    - pizza_type: hawaiian
+  - slot_was_set:
+    - requested_slot: crust
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - requested_slot: size
+  - slot_was_set:
+    - size: small
+  - slot_was_set:
+    - size: small
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_confirmation
+  - intent: confirm
+  - action: utter_state_confirmation
+  - intent: exit
