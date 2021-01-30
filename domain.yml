@@ -2,35 +2,36 @@ version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
 intents:
-- greet
 - give_entity
 - confirm
+- exit
+- greet
 - deny
 - request
-
 entities:
-  - pizza_type
-  - crust
-  - size
-  - order_type
-  - phone
-  - name
-
-
+- crust
+- name
+- order_type
+- phone
+- pizza_type
+- size
 slots:
   pizza_type:
     type: text
+    influence_conversation: true
   crust:
     type: text
+    influence_conversation: true
   size:
     type: text
+    influence_conversation: true
   order_type:
     type: text
+    influence_conversation: true
   phone:
     type: text
-
+    influence_conversation: true
 responses:
   utter_greet:
   - text: |
@@ -58,28 +59,19 @@ responses:
   utter_state_confirmation:
   - text: |
       Order is confirmed. You'll have your pizza in 20 minutes. 
-
 actions:
 - '...'
+- utter_ask_confirmation
 - utter_greet
-
+- utter_state_confirmation
 forms:
   pizza_form:
     pizza_type:
-      - type: from_entity
-        entity: pizza_type
+    - type: from_entity
+      entity: pizza_type
     crust:
-      - type: from_entity
-        entity: crust
+    - type: from_entity
+      entity: crust
     size:
-      - type: from_entity
-        entity: size
-    name:
-      - type: from_entity
-        entity: name
-    phone:
-      - type: from_entity
-        entity: phone
-    order_type:
-      - type: from_entity
-        entity: order_type
+    - type: from_entity
+      entity: size

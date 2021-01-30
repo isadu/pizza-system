@@ -1,9 +1,8 @@
 rules:
- - rule: activate subscribe form
+ - rule: greet new user
    steps:
-   - intent: order_specialty
-   - action: pizza_form
-   - active_loop: pizza_form
+   - intent: greet
+   - action: utter_greet
 
  - rule: submit form
    condition:
@@ -11,4 +10,4 @@ rules:
    steps:
    - action: pizza_form
    - active_loop: null
-   - action: utter_ask_delivery
+   - action: utter_ask_confirmation
