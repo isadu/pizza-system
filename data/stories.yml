@@ -1,8 +1,38 @@
 stories:
- - story: greet and subscribe
+ - story: order pizza 1
    steps:
-   - intent: greet
    - action: utter_greet
-   - intent: subscribe
-   - action: newsletter_form
-   - active_loop: newsletter_form
+   - intent: give_entity
+   - action: utter_ask_size
+   - intent: give_entity
+   - action: utter_ask_crust
+   - intent: give_entity
+   - action: utter_ask_delivery
+   - intent: give_entity
+   - action: utter_ask_name
+   - intent: give_entity
+   - action: utter_ask_phone
+   - intent: give_entity
+   - action: utter_ask_confirmation
+   - intent: confirm
+   - action: utter_state_confirmation
+   - active_loop: pizza_form
+   
+ m steps:
+   - action: utter_greet
+   - intent: give_entity
+   - action: utter_ask_size
+   - intent: give_entity
+   - action: utter_ask_crust
+   - intent: give_entity
+   - action: utter_ask_delivery
+   - intent: give_entity
+   - action: utter_ask_name
+   - intent: give_entity
+   - action: utter_ask_phone
+   - intent: give_entity
+   - action: utter_ask_confirmation
+   - intent: deny
+   - action: 
+   - action: utter_state_confirmation
+   - active_loop: pizza_for
