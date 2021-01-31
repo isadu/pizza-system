@@ -105,12 +105,6 @@ stories:
   - action: utter_state_confirmation
   - intent: exit
 
-- story: restart
-  steps:
-  - intent: restart
-  - action: action_restart
-  - action: utter_greet
-
 - story: cancel
   steps:
   - intent: cancel
@@ -229,3 +223,118 @@ stories:
   - active_loop: null
   - action: utter_ask_confirmation
   - intent: deny
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+    entities:
+    - size: small
+    - pizza_type: 4 cheese
+    - crust: gluten free
+  - slot_was_set:
+    - pizza_type: 4 cheese
+  - slot_was_set:
+    - crust: gluten free
+  - slot_was_set:
+    - size: small
+  - action: pizza_form
+  - active_loop: pizza_form
+  - slot_was_set:
+    - pizza_type: 4 cheese
+  - slot_was_set:
+    - crust: gluten free
+  - slot_was_set:
+    - size: small
+  - slot_was_set:
+    - pizza_type: 4 cheese
+  - slot_was_set:
+    - crust: gluten free
+  - slot_was_set:
+    - size: small
+  - slot_was_set:
+    - requested_slot: delivery
+  - intent: cancel
+  - action: action_restart
+
+- story: interactive_story_1
+  steps:
+  - intent: inform
+    entities:
+    - size: large
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - size: large
+  - action: pizza_form
+  - active_loop: pizza_form
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - size: large
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - size: large
+  - slot_was_set:
+    - requested_slot: crust
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - requested_slot: delivery
+  - intent: start-over
+  - action: action_restart
+
+- story: interactive_story_2
+  steps:
+  - action: utter_restart
+  - action: utter_ask_pizza_type
+  - intent: inform
+    entities:
+    - size: large
+    - pizza_type: hawaiian
+  - slot_was_set:
+    - pizza_type: hawaiian
+  - slot_was_set:
+    - size: large
+  - action: pizza_form
+  - active_loop: pizza_form
+  - slot_was_set:
+    - pizza_type: hawaiian
+  - slot_was_set:
+    - size: large
+  - slot_was_set:
+    - pizza_type: hawaiian
+  - slot_was_set:
+    - size: large
+  - slot_was_set:
+    - requested_slot: crust
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - delivery: delivery
+  - slot_was_set:
+    - delivery: delivery
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - phone: 555-555-5555
+  - slot_was_set:
+    - name: Jane
+  - slot_was_set:
+    - phone: 555-555-5555
+  - slot_was_set:
+    - name: Jane
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_confirmation
+  - intent: confirm
+  - action: utter_state_confirmation
+  - intent: exit

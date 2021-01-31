@@ -3,15 +3,15 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- deny
-- confirm
 - inform
-- greet
 - exit
-- request
-- cancel
-- repeat
 - start-over
+- confirm
+- cancel
+- greet
+- deny
+- request
+- repeat
 entities:
 - crust
 - delivery
@@ -77,8 +77,10 @@ responses:
 actions:
 - '...'
 - utter_ask_confirmation
+- utter_ask_pizza_type
 - utter_default
 - utter_greet
+- utter_restart
 - utter_state_confirmation
 forms:
   pizza_form:

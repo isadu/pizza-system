@@ -29,8 +29,13 @@ nlu:
     - [206-555-5555](phone)
     - hi, [large](size) [pepperoni](pizza_type) on [thin](crust) crust
     - [pickup](delivery)
-    - [Jane](name)
     - [206-206-2062](phone)
+    - [small](size) [4 cheese](pizza_type) on [gluten free](crust) crust
+    - hi, [large](size) [pepperoni](pizza_type) please
+    - [thin](crust)
+    - [large](size) [hawaiian](pizza_type)
+    - [thin](crust), and it's for [delivery](delivery)
+    - my name is [Jane](name) and my phone number is [555-555-5555](phone)
 - intent: confirm
   examples: |
     - Yes
@@ -39,6 +44,7 @@ nlu:
     - Yes.
     - Yeah.
     - yep
+    - yes, that's correct
 - intent: deny
   examples: |
     - No
@@ -60,6 +66,7 @@ nlu:
     - never mind
     - cancel that
     - cancel
+    - actually never mind
 - intent: repeat
   examples: |
     - Can you say that again?
@@ -70,6 +77,7 @@ nlu:
   examples: |
     - Start over
     - Restart
+    - hang on, start over
 - intent: greet
   examples: |
     - hello
