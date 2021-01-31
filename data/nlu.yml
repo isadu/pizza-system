@@ -49,6 +49,7 @@ nlu:
     - goodbye
     - Thanks
     - Alright, thanks
+    - That's all
 - intent: cancel
   examples: |
     - never mind
