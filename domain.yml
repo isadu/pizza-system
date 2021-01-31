@@ -4,10 +4,10 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - inform
+- cancel
 - exit
 - start-over
 - confirm
-- cancel
 - greet
 - deny
 - request

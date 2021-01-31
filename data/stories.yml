@@ -338,3 +338,46 @@ stories:
   - intent: confirm
   - action: utter_state_confirmation
   - intent: exit
+
+- story: interactive_story_1
+  steps:
+  - intent: inform
+    entities:
+    - size: small
+    - crust: regular
+  - slot_was_set:
+    - crust: regular
+  - slot_was_set:
+    - size: small
+
+- story: interactive_story_2
+  steps:
+  - intent: inform
+    entities:
+    - size: small
+    - pizza_type: vegetarian
+    - crust: regular
+  - slot_was_set:
+    - pizza_type: vegetarian
+  - slot_was_set:
+    - crust: regular
+  - slot_was_set:
+    - size: small
+  - action: pizza_form
+  - active_loop: pizza_form
+  - slot_was_set:
+    - pizza_type: vegetarian
+  - slot_was_set:
+    - crust: regular
+  - slot_was_set:
+    - size: small
+  - slot_was_set:
+    - pizza_type: vegetarian
+  - slot_was_set:
+    - crust: regular
+  - slot_was_set:
+    - size: small
+  - slot_was_set:
+    - requested_slot: delivery
+  - intent: cancel
+  - action: action_restart

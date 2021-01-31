@@ -36,6 +36,8 @@ nlu:
     - [large](size) [hawaiian](pizza_type)
     - [thin](crust), and it's for [delivery](delivery)
     - my name is [Jane](name) and my phone number is [555-555-5555](phone)
+    - hi, [small](size) veggie supreme on [regular](crust) crust please
+    - hi, [small](size) [vegetarian](pizza_type) on [regular](crust) crust please
 - intent: confirm
   examples: |
     - Yes
