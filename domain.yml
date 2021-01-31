@@ -5,7 +5,7 @@ session_config:
 intents:
 - greet
 - confirm
-- give_entity
+- inform
 - exit
 - deny
 - request
@@ -38,7 +38,10 @@ slots:
 responses:
   utter_greet:
   - text: |
-      "Welcome to the pizza ordering system. What would you like?"
+      Welcome to the pizza ordering system. What would you like?
+  utter_ask_pizza_type:
+  - text: |
+      What kind of pizza would you like?
   utter_ask_size:
   - text: |
       Size? Can be large, medium or small.

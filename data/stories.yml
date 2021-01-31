@@ -3,7 +3,7 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: give_entity
+  - intent: inform
     entities:
     - pizza_type: Hawaiian
   - slot_was_set:
@@ -56,7 +56,7 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: give_entity
+  - intent: inform
     entities:
     - pizza_type: Vegetarian
   - slot_was_set:
