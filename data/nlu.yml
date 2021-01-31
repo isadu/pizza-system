@@ -1,6 +1,6 @@
 version: "2.0"
 nlu:
-- intent: give_entity
+- intent: inform
   examples: |
     - [Hawaiian](pizza_type)
     - [4 cheese](pizza_type)

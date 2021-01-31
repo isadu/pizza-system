@@ -69,8 +69,11 @@ responses:
   - text: |
       Order is confirmed. You'll have your pizza in 20 minutes. 
   utter_default:
-  - test: |
+  - text: |
       Sorry, I didn't understand that. Could you rephrase?
+  utter_restart:
+  - text: |
+      Clearing order.
 actions:
 - '...'
 - utter_ask_confirmation

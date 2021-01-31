@@ -104,3 +104,14 @@ stories:
   - intent: confirm
   - action: utter_state_confirmation
   - intent: exit
+
+- story: restart
+  steps:
+  - intent: restart
+  - action: action_restart
+  - action: utter_greet
+
+- story: cancel
+  steps:
+  - intent: cancel
+  - action: action_restart
