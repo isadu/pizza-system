@@ -9,6 +9,9 @@ intents:
 - exit
 - deny
 - request
+- cancel
+- repeat
+- start-over
 entities:
 - crust
 - delivery
@@ -65,11 +68,15 @@ responses:
   utter_state_confirmation:
   - text: |
       Order is confirmed. You'll have your pizza in 20 minutes. 
+  utter_default:
+  - test: |
+      Sorry, I didn't understand that. Could you rephrase?
 actions:
 - '...'
 - utter_ask_confirmation
 - utter_greet
 - utter_state_confirmation
+- utter_default
 forms:
   pizza_form:
     pizza_type:

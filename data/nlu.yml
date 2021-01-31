@@ -49,6 +49,21 @@ nlu:
     - goodbye
     - Thanks
     - Alright, thanks
+- intent: cancel
+  examples: |
+    - never mind
+    - cancel that
+    - cancel
+- intent: repeat
+  examples: |
+    - Can you say that again?
+    - Repeat please
+    - I didn't catch that
+    - Say again
+- intent: start-over
+  examples: |
+    - Start over
+    - Restart
 - intent: greet
   examples: |
     - hello
