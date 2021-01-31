@@ -115,3 +115,117 @@ stories:
   steps:
   - intent: cancel
   - action: action_restart
+- story: interactive_story_1
+  steps:
+  - intent: inform
+    entities:
+    - size: large
+    - pizza_type: pepperoni
+    - crust: thin
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - size: large
+  - action: pizza_form
+  - active_loop: pizza_form
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - size: large
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - size: large
+  - slot_was_set:
+    - requested_slot: delivery
+  - slot_was_set:
+    - delivery: pickup
+  - slot_was_set:
+    - delivery: pickup
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Jane
+  - slot_was_set:
+    - name: Jane
+  - slot_was_set:
+    - requested_slot: phone
+  - slot_was_set:
+    - phone: 206-206-2062
+  - slot_was_set:
+    - phone: 206-206-2062
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_confirmation
+  - intent: confirm
+  - action: utter_state_confirmation
+
+- story: interactive_story_2
+  steps:
+  - intent: inform
+    entities:
+    - size: large
+    - pizza_type: pepperoni
+    - crust: thin
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - size: large
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - size: large
+  - action: pizza_form
+  - active_loop: pizza_form
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - size: large
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - crust: thin
+  - slot_was_set:
+    - size: large
+  - slot_was_set:
+    - requested_slot: delivery
+  - slot_was_set:
+    - delivery: pickup
+  - slot_was_set:
+    - delivery: pickup
+  - slot_was_set:
+    - delivery: pickup
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Jane
+  - slot_was_set:
+    - name: Jane
+  - slot_was_set:
+    - name: Jane
+  - slot_was_set:
+    - requested_slot: phone
+  - slot_was_set:
+    - phone: 206-206-2062
+  - slot_was_set:
+    - phone: 206-206-2062
+  - slot_was_set:
+    - phone: 206-206-2062
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_confirmation
+  - intent: deny

@@ -3,11 +3,11 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
+- deny
 - confirm
 - inform
+- greet
 - exit
-- deny
 - request
 - cancel
 - repeat
@@ -77,9 +77,9 @@ responses:
 actions:
 - '...'
 - utter_ask_confirmation
+- utter_default
 - utter_greet
 - utter_state_confirmation
-- utter_default
 forms:
   pizza_form:
     pizza_type:

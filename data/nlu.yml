@@ -20,7 +20,6 @@ nlu:
     - [Delivery](delivery)
     - [206-555-1234](phone)
     - [Vegetarian](pizza_type)
-    - [regular](crust)
     - [Small](size), please
     - [Pick-up](delivery) please
     - For [pickup](delivery)
@@ -28,6 +27,10 @@ nlu:
     - [Jane](name)
     - [Alexa](name)
     - [206-555-5555](phone)
+    - hi, [large](size) [pepperoni](pizza_type) on [thin](crust) crust
+    - [pickup](delivery)
+    - [Jane](name)
+    - [206-206-2062](phone)
 - intent: confirm
   examples: |
     - Yes
@@ -35,11 +38,13 @@ nlu:
     - Correct
     - Yes.
     - Yeah.
+    - yep
 - intent: deny
   examples: |
     - No
     - That's not right
     - Nope
+    - no
 - intent: request
   examples: |
     - How big is the [large](size)?
