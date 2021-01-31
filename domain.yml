@@ -3,16 +3,19 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- give_entity
-- confirm
-- exit
 - greet
+- confirm
+- inform
+- exit
 - deny
 - request
+- cancel
+- repeat
+- start-over
 entities:
 - crust
+- delivery
 - name
-- order_type
 - phone
 - pizza_type
 - size
@@ -26,16 +29,22 @@ slots:
   size:
     type: text
     influence_conversation: true
-  order_type:
+  delivery:
     type: text
     influence_conversation: true
   phone:
     type: text
     influence_conversation: true
+  name:
+    type: text
+    influence_conversation: true
 responses:
   utter_greet:
   - text: |
-      "Welcome to the pizza ordering system. What would you like?"
+      Welcome to the pizza ordering system. What would you like?
+  utter_ask_pizza_type:
+  - text: |
+      What kind of pizza would you like?
   utter_ask_size:
   - text: |
       Size? Can be large, medium or small.
@@ -59,11 +68,18 @@ responses:
   utter_state_confirmation:
   - text: |
       Order is confirmed. You'll have your pizza in 20 minutes. 
+  utter_default:
+  - text: |
+      Sorry, I didn't understand that. Could you rephrase?
+  utter_restart:
+  - text: |
+      Clearing order.
 actions:
 - '...'
 - utter_ask_confirmation
 - utter_greet
 - utter_state_confirmation
+- utter_default
 forms:
   pizza_form:
     pizza_type:
@@ -75,3 +91,12 @@ forms:
     size:
     - type: from_entity
       entity: size
+    delivery:
+    - type: from_entity
+      entity: delivery
+    name:
+    - type: from_entity
+      entity: name
+    phone:
+    - type: from_entity
+      entity: phone

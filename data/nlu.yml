@@ -1,34 +1,71 @@
 version: "2.0"
-
 nlu:
-- intent: give_entity
+- intent: inform
   examples: |
     - [Hawaiian](pizza_type)
     - [4 cheese](pizza_type)
+    - [Vegetarian](pizza_type) please
+    - [Vegan](pizza_type)
+    - A [pepperoni](pizza_type)
+    - [Meat lovers](pizza_type) pizza
     - [Thin](crust)
-    - [Regular](size)
+    - [Regular](crust)
     - [Deep dish](crust)
+    - On [gluten free](crust) crust
     - [Small](size)
     - [Medium](size)
     - [Large](size)
-    - [Vegan](pizza_type)
-    
+    - [Alex](name)
+    - [regular](crust)
+    - [Delivery](delivery)
+    - [206-555-1234](phone)
+    - [Vegetarian](pizza_type)
+    - [regular](crust)
+    - [Small](size), please
+    - [Pick-up](delivery) please
+    - For [pickup](delivery)
+    - [John](name)
+    - [Jane](name)
+    - [Alexa](name)
+    - [206-555-5555](phone)
 - intent: confirm
   examples: |
     - Yes
     - Yeah
-    
+    - Correct
+    - Yes.
+    - Yeah.
 - intent: deny
   examples: |
     - No
     - That's not right
     - Nope
-    
 - intent: request
-  examples: | 
+  examples: |
     - How big is the [large](size)?
-    
 - intent: exit
-  examples: | 
+  examples: |
     - thanks!
     - goodbye
+    - Thanks
+    - Alright, thanks
+    - That's all
+- intent: cancel
+  examples: |
+    - never mind
+    - cancel that
+    - cancel
+- intent: repeat
+  examples: |
+    - Can you say that again?
+    - Repeat please
+    - I didn't catch that
+    - Say again
+- intent: start-over
+  examples: |
+    - Start over
+    - Restart
+- intent: greet
+  examples: |
+    - hello
+    - hi
