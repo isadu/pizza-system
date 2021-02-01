@@ -3,12 +3,12 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- confirm
+- greet
 - inform
 - cancel
 - exit
 - start-over
-- confirm
-- greet
 - deny
 - request
 - repeat
@@ -17,11 +17,11 @@ entities:
 - delivery
 - name
 - phone
-- pizza_type
+- pizza_topping
 - size
 slots:
-  pizza_type:
-    type: text
+  pizza_topping:
+    type: list
     influence_conversation: true
   crust:
     type: text
@@ -41,10 +41,10 @@ slots:
 responses:
   utter_greet:
   - text: |
-      Welcome to the pizza ordering system. What would you like?
-  utter_ask_pizza_type:
+      Welcome to the custom pizza ordering system. Start by telling me what toppings you want
+  utter_ask_toppings:
   - text: |
-      What kind of pizza would you like?
+      What else would you like on your pizza? Say 'finished' to move on to the next step.
   utter_ask_size:
   - text: |
       Size? Can be large, medium or small.
@@ -64,7 +64,7 @@ responses:
       What is your phone number?
   utter_ask_confirmation:
   - text: |
-      Your order is a {size} {pizza_type} on {crust} crust. Is that okay?
+      Your order is a {size} pizza with {pizza_toppings} on {crust} crust. Is that okay?
   utter_state_confirmation:
   - text: |
       Order is confirmed. You'll have your pizza in 20 minutes. 
@@ -74,19 +74,28 @@ responses:
   utter_restart:
   - text: |
       Clearing order.
+  utter_fix_order:
+  - text: |
+      What would you like to change?
 actions:
 - '...'
 - utter_ask_confirmation
-- utter_ask_pizza_type
+- utter_ask_crust
+- utter_ask_delivery
+- utter_ask_name
+- utter_ask_phone
+- utter_ask_size
+- utter_ask_toppings
 - utter_default
 - utter_greet
 - utter_restart
 - utter_state_confirmation
+- utter_fix_order
 forms:
   pizza_form:
-    pizza_type:
+    pizza_topping:
     - type: from_entity
-      entity: pizza_type
+      entity: pizza_topping
     crust:
     - type: from_entity
       entity: crust
