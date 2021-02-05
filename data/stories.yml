@@ -1,383 +1,116 @@
 stories:
-- story: interactive_story_1
+
+- story: happy path
   steps:
   - intent: greet
   - action: utter_greet
   - intent: inform
-    entities:
-    - pizza_type: Hawaiian
-  - slot_was_set:
-    - pizza_type: Hawaiian
   - action: pizza_form
   - active_loop: pizza_form
   - slot_was_set:
-    - pizza_type: Hawaiian
-  - slot_was_set:
-    - pizza_type: Hawaiian
-  - slot_was_set:
-    - requested_slot: crust
-  - slot_was_set:
     - crust: regular
   - slot_was_set:
-    - crust: regular
-  - slot_was_set:
-    - requested_slot: size
-  - slot_was_set:
-    - size: Large
-  - slot_was_set:
-    - size: Large
+    - size: small
   - slot_was_set:
     - requested_slot: delivery
-  - slot_was_set:
-    - delivery: Delivery
-  - slot_was_set:
-    - delivery: Delivery
-  - slot_was_set:
-    - requested_slot: name
-  - slot_was_set:
-    - name: Alex
-  - slot_was_set:
-    - name: Alex
-  - slot_was_set:
-    - requested_slot: phone
-  - slot_was_set:
-    - phone: 206-555-1234
-  - slot_was_set:
-    - phone: 206-555-1234
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_ask_confirmation
-  - intent: confirm
-  - action: utter_state_confirmation
-  - intent: exit
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: inform
-    entities:
-    - pizza_type: Vegetarian
-  - slot_was_set:
-    - pizza_type: Vegetarian
-  - action: pizza_form
-  - active_loop: pizza_form
-  - slot_was_set:
-    - pizza_type: Vegetarian
-  - slot_was_set:
-    - pizza_type: Vegetarian
-  - slot_was_set:
-    - requested_slot: crust
-  - slot_was_set:
-    - crust: regular
-  - slot_was_set:
-    - crust: regular
-  - slot_was_set:
-    - requested_slot: size
-  - slot_was_set:
-    - size: Small
-  - slot_was_set:
-    - size: Small
-  - slot_was_set:
-    - requested_slot: delivery
-  - slot_was_set:
-    - delivery: Pick-up
-  - slot_was_set:
-    - delivery: Pick-up
-  - slot_was_set:
-    - requested_slot: name
-  - slot_was_set:
-    - name: Alexa
-  - slot_was_set:
-    - name: Alexa
-  - slot_was_set:
-    - requested_slot: phone
-  - slot_was_set:
-    - phone: 206-555-5555
-  - slot_was_set:
-    - phone: 206-555-5555
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_ask_confirmation
-  - intent: confirm
-  - action: utter_state_confirmation
-  - intent: exit
-
-- story: cancel
-  steps:
   - intent: cancel
   - action: action_restart
-- story: interactive_story_1
+
+
+- story: interactive_story_3
   steps:
+  - intent: greet
+  - action: utter_greet
   - intent: inform
     entities:
-    - size: large
-    - pizza_type: pepperoni
+    - pizza_topping: sausage
+    - pizza_topping: mozzarella
+  - slot_was_set:
+    - pizza_topping:
+      - sausage
+      - mozzarella
+  - action: utter_ask_crust
+  - intent: inform
+    entities:
     - crust: thin
   - slot_was_set:
-    - pizza_type: pepperoni
-  - slot_was_set:
     - crust: thin
+  - action: utter_ask_size
+  - intent: inform
+    entities:
+    - size: medium
   - slot_was_set:
-    - size: large
-  - action: pizza_form
-  - active_loop: pizza_form
+    - size: medium
+  - action: utter_ask_delivery
+  - intent: inform
+    entities:
+    - delivery: delivery
   - slot_was_set:
-    - pizza_type: pepperoni
+    - delivery: delivery
+  - action: utter_ask_phone
+  - intent: inform
+    entities:
+    - phone: 555-788-3383
   - slot_was_set:
-    - crust: thin
+    - phone: 555-788-3383
+  - action: utter_ask_name
+  - intent: inform
+    entities:
+    - name: Alex
   - slot_was_set:
-    - size: large
-  - slot_was_set:
-    - pizza_type: pepperoni
-  - slot_was_set:
-    - crust: thin
-  - slot_was_set:
-    - size: large
-  - slot_was_set:
-    - requested_slot: delivery
-  - slot_was_set:
-    - delivery: pickup
-  - slot_was_set:
-    - delivery: pickup
-  - slot_was_set:
-    - requested_slot: name
-  - slot_was_set:
-    - name: Jane
-  - slot_was_set:
-    - name: Jane
-  - slot_was_set:
-    - requested_slot: phone
-  - slot_was_set:
-    - phone: 206-206-2062
-  - slot_was_set:
-    - phone: 206-206-2062
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
+    - name: Alex
   - action: utter_ask_confirmation
   - intent: confirm
   - action: utter_state_confirmation
 
-- story: interactive_story_2
+- story: interactive_story_adjust
   steps:
+  - intent: greet
+  - action: utter_greet
   - intent: inform
     entities:
-    - size: large
-    - pizza_type: pepperoni
+    - pizza_topping: sausage
+    - pizza_topping: mozzarella
+  - slot_was_set:
+    - pizza_topping:
+      - sausage
+      - mozzarella
+  - action: utter_ask_crust
+  - intent: inform
+    entities:
     - crust: thin
   - slot_was_set:
-    - pizza_type: pepperoni
-  - slot_was_set:
     - crust: thin
+  - action: utter_ask_size
+  - intent: inform
+    entities:
+    - size: medium
   - slot_was_set:
-    - size: large
+    - size: medium
+  - action: utter_ask_delivery
+  - intent: inform
+    entities:
+    - delivery: delivery
   - slot_was_set:
-    - pizza_type: pepperoni
+    - delivery: delivery
+  - action: utter_ask_phone
+  - intent: inform
+    entities:
+    - phone: 555-788-3383
   - slot_was_set:
-    - crust: thin
+    - phone: 555-788-3383
+  - action: utter_ask_name
+  - intent: inform
+    entities:
+    - name: Alex
   - slot_was_set:
-    - size: large
-  - action: pizza_form
-  - active_loop: pizza_form
-  - slot_was_set:
-    - pizza_type: pepperoni
-  - slot_was_set:
-    - crust: thin
-  - slot_was_set:
-    - size: large
-  - slot_was_set:
-    - pizza_type: pepperoni
-  - slot_was_set:
-    - crust: thin
-  - slot_was_set:
-    - size: large
-  - slot_was_set:
-    - requested_slot: delivery
-  - slot_was_set:
-    - delivery: pickup
-  - slot_was_set:
-    - delivery: pickup
-  - slot_was_set:
-    - delivery: pickup
-  - slot_was_set:
-    - requested_slot: name
-  - slot_was_set:
-    - name: Jane
-  - slot_was_set:
-    - name: Jane
-  - slot_was_set:
-    - name: Jane
-  - slot_was_set:
-    - requested_slot: phone
-  - slot_was_set:
-    - phone: 206-206-2062
-  - slot_was_set:
-    - phone: 206-206-2062
-  - slot_was_set:
-    - phone: 206-206-2062
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
+    - name: Alex
   - action: utter_ask_confirmation
   - intent: deny
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
+  - action: utter_fix_order
   - intent: inform
     entities:
-    - size: small
-    - pizza_type: 4 cheese
-    - crust: gluten free
-  - slot_was_set:
-    - pizza_type: 4 cheese
-  - slot_was_set:
-    - crust: gluten free
-  - slot_was_set:
-    - size: small
-  - action: pizza_form
-  - active_loop: pizza_form
-  - slot_was_set:
-    - pizza_type: 4 cheese
-  - slot_was_set:
-    - crust: gluten free
-  - slot_was_set:
-    - size: small
-  - slot_was_set:
-    - pizza_type: 4 cheese
-  - slot_was_set:
-    - crust: gluten free
-  - slot_was_set:
-    - size: small
-  - slot_was_set:
-    - requested_slot: delivery
-  - intent: cancel
-  - action: action_restart
-
-- story: interactive_story_1
-  steps:
-  - intent: inform
-    entities:
-    - size: large
-    - pizza_type: pepperoni
-  - slot_was_set:
-    - pizza_type: pepperoni
-  - slot_was_set:
-    - size: large
-  - action: pizza_form
-  - active_loop: pizza_form
-  - slot_was_set:
-    - pizza_type: pepperoni
-  - slot_was_set:
-    - size: large
-  - slot_was_set:
-    - pizza_type: pepperoni
-  - slot_was_set:
-    - size: large
-  - slot_was_set:
-    - requested_slot: crust
-  - slot_was_set:
-    - crust: thin
-  - slot_was_set:
-    - crust: thin
-  - slot_was_set:
-    - requested_slot: delivery
-  - intent: start-over
-  - action: action_restart
-
-- story: interactive_story_2
-  steps:
-  - action: utter_restart
-  - action: utter_ask_pizza_type
-  - intent: inform
-    entities:
-    - size: large
-    - pizza_type: hawaiian
-  - slot_was_set:
-    - pizza_type: hawaiian
-  - slot_was_set:
-    - size: large
-  - action: pizza_form
-  - active_loop: pizza_form
-  - slot_was_set:
-    - pizza_type: hawaiian
-  - slot_was_set:
-    - size: large
-  - slot_was_set:
-    - pizza_type: hawaiian
-  - slot_was_set:
-    - size: large
-  - slot_was_set:
-    - requested_slot: crust
-  - slot_was_set:
-    - crust: thin
-  - slot_was_set:
-    - delivery: delivery
-  - slot_was_set:
-    - delivery: delivery
-  - slot_was_set:
-    - crust: thin
-  - slot_was_set:
-    - requested_slot: name
-  - slot_was_set:
-    - phone: 555-555-5555
-  - slot_was_set:
-    - name: Jane
-  - slot_was_set:
-    - phone: 555-555-5555
-  - slot_was_set:
-    - name: Jane
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
+    - phone: 555-788-3382
   - action: utter_ask_confirmation
   - intent: confirm
   - action: utter_state_confirmation
-  - intent: exit
-
-- story: interactive_story_1
-  steps:
-  - intent: inform
-    entities:
-    - size: small
-    - crust: regular
-  - slot_was_set:
-    - crust: regular
-  - slot_was_set:
-    - size: small
-
-- story: interactive_story_2
-  steps:
-  - intent: inform
-    entities:
-    - size: small
-    - pizza_type: vegetarian
-    - crust: regular
-  - slot_was_set:
-    - pizza_type: vegetarian
-  - slot_was_set:
-    - crust: regular
-  - slot_was_set:
-    - size: small
-  - action: pizza_form
-  - active_loop: pizza_form
-  - slot_was_set:
-    - pizza_type: vegetarian
-  - slot_was_set:
-    - crust: regular
-  - slot_was_set:
-    - size: small
-  - slot_was_set:
-    - pizza_type: vegetarian
-  - slot_was_set:
-    - crust: regular
-  - slot_was_set:
-    - size: small
-  - slot_was_set:
-    - requested_slot: delivery
-  - intent: cancel
-  - action: action_restart
