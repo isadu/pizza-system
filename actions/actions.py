@@ -106,23 +106,22 @@ class ActionMakeOrder(Action):
 	
 	
 
-   def name(self):
-      # type: () -> Text
-      return "action_make_order"
+    def name(self):
+       	# type: () -> Text
+       	return "action_make_order"
 
-   def run(self, dispatcher, tracker, domain):
-      # type: (CollectingDispatcher, Tracker, Dict[Text, Any]) -> List[Dict[Text, Any]]
+    def run(self, dispatcher, tracker, domain):
+       	# type: (CollectingDispatcher, Tracker, Dict[Text, Any]) -> List[Dict[Text, Any]]
 
-      cuisine = tracker.get_slot('cuisine')
-      q = "select * from restaurants where cuisine='{0}' limit 1".format(cuisine)
-      result = db.query(q)
-
-      return [SlotSet("matches", result if result is not None else [])]
+       	t = tracker.get_slot('pizza_topping')
+       	#q = "select * from restaurants where cuisine='{0}' limit 1".format(cuisine)
+       	#result = db.query(q)
+       	return [SlotSet("matches", result if result is not None else [])]
 	  
 	  
 	def special_cost(self, type):
-		cost = 0
-		for ingredient in specials[type]:
+	   	cost = 0
+	   	for ingredient in specials[type]:
 			category = ingredient[0]
 			item = ingreditent[1]
 			cost += toppings[category][item]
