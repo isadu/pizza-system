@@ -113,9 +113,10 @@ class ActionMakeOrder(Action):
    def run(self, dispatcher, tracker, domain):
       # type: (CollectingDispatcher, Tracker, Dict[Text, Any]) -> List[Dict[Text, Any]]
 
-      t = tracker.get_slot('pizza_topping')
-      #q = "select * from restaurants where cuisine='{0}' limit 1".format(cuisine)
-      #result = db.query(q)
+      cuisine = tracker.get_slot('cuisine')
+      q = "select * from restaurants where cuisine='{0}' limit 1".format(cuisine)
+      result = db.query(q)
+
       return [SlotSet("matches", result if result is not None else [])]
 	  
 	  

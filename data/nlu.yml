@@ -38,13 +38,6 @@ nlu:
     - my name is [Jane](name) and my phone number is [555-555-5555](phone)
     - hi, [small](size) veggie supreme on [regular](crust) crust please
     - hi, [small](size) [vegetarian](pizza_type) on [regular](crust) crust please
-    - sausage, mozzarella, and pineapple
-    - [thin](crust)
-    - [sausage](pizza_topping) a[nd mozzare]{"entity": "pizza_topping", "value": "mozzarella"}lla
-    - [mediu]{"entity": "size", "value": "medium"}
-    - [delivery](delivery)
-    - [5557883383]{"entity": "phone", "value": "555-788-3383"}
-    - [Alex](name)
 - intent: confirm
   examples: |
     - Yes
@@ -54,7 +47,6 @@ nlu:
     - Yeah.
     - yep
     - yes, that's correct
-    - y
 - intent: deny
   examples: |
     - No
